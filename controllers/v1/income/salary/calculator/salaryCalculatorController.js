@@ -25,7 +25,7 @@ class SalaryCalculatorController {
         try {
             let salary = await SalaryModel.findById(req.params.id)
             salary.set(req.body)
-            await salary.save()
+            await salary.save();
             res.status(200).send({message: "ok", data: salary})
         } catch (e) {
             res.status(500).send({result: false, status: 500, message: e.message, data: e})
